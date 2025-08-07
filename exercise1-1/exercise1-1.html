@@ -34,7 +34,7 @@
                 category of review.
             </p>
             <h3>A note on using <code>split()</code> for this exercise</h3>
-            <p>To separate the review label from the text, you can use the <a href="https://p5js.org/reference/#/p5/split" target="_blank"><code>split()</code></a> 
+            <p>To separate the review label from the text, you can use the <a href="https://p5js.org/reference/p5/split" target="_blank"><code>split()</code></a> 
             function. Unlike the examples shown in class, the review text and label are separated by a tab. To split on a 
             tab, use the tab escape sequence, <code>\t</code>. E.g.</p>
             <pre>let parts = split(someString, "\t");</pre>
@@ -56,16 +56,16 @@
             <div class="collapse" id="hint">
                 <div class="card card-body">
                     <h3>Selecting a random index</h3>
-                    <p>The <a href="https://p5js.org/reference/#/p5/floor" target="_blank"><code>floor()</code></a> function will be useful when picking 
-                    a random review. Remember that the <a href="https://p5js.org/reference/#/p5/random" target="_blank"><code>random()</code></a> function 
-                    always returns a float but array indices are always integers. You can use <a href="https://p5js.org/reference/#/p5/floor" target="_blank"><code>floor()</code></a> to 
+                    <p>The <a href="https://p5js.org/reference/p5/floor" target="_blank"><code>floor()</code></a> function will be useful when picking 
+                    a random review. Remember that the <a href="https://p5js.org/reference/p5/random" target="_blank"><code>random()</code></a> function 
+                    always returns a float but array indices are always integers. You can use <a href="https://p5js.org/reference/p5/floor" target="_blank"><code>floor()</code></a> to 
                     round a random float to the nearest integer less than or equal to the float.</p>
                     <h3>Parsing the text from the file</h3>
                     <p>Once the file has been read to an array using <code>loadStrings()</code>, there are several ways to achieve the expected output 
                         using only concepts covered in the module so far. Here are two possibilities:</p>
                     <ul>
                         <li>You could leave the array containing the raw reviews as it is. Then, when a random review 
-                            is selected for display, use <a href="https://p5js.org/reference/#/p5/split" target="_blank"><code>split()</code></a>  to separate 
+                            is selected for display, use <a href="https://p5js.org/reference/p5/split" target="_blank"><code>split()</code></a>  to separate 
                             the review text and the label. You could then determine the styling for the text based on the 
                             review label.
                         </li>
