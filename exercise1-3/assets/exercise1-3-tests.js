@@ -22,7 +22,7 @@ async function runTests(canvas) {
         const expectedSprites = [new Sprite(grass, 0, 0), new Sprite(grass, 0, 20), new Sprite(grass, 0, 40), new Sprite(rock, 20, 0), new Sprite(rock, 20, 20), 
         new Sprite(sand, 20, 40), new Sprite(sand, 40, 0), new Sprite(water, 40, 20), new Sprite(water, 40, 40), new Sprite(foxcat, 20, 20)];
         const testArrStr = '["' + testArr.join('", "') + '"]';
-        TestResults.addInfo(`All tests are carried out using the following string array in place of the lines loaded from a scene test file: <code>${testArrStr}</code>. Your code should work for any array of strings in the correct format.`);
+        TestResults.addWarning(`All tests are carried out using the following string array in place of the lines loaded from a scene test file: <code>${testArrStr}</code>. Your code should work for any array of strings in the correct format.`);
         background(255);
         sprites = [];
         createSprites(testArr);
