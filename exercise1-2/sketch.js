@@ -14,8 +14,9 @@ function setup()
 
 function draw()
 {
-    background(0);
+    background(255);
     drawNames();
+
 }
 
 function getWords(text)
@@ -23,7 +24,8 @@ function getWords(text)
     let parts = [];
     for(let i = 0; i<text.length; i++)
     {
-        let words = split(text[i], " ");
+        let cWords = text[i].replace(/[^a-zA-Z]+/g, " ");
+        let words = cWords.split(" ")
         parts = parts.concat(words);
     }
     return(parts)
@@ -40,16 +42,20 @@ function countOccurrences(parts,word)
         }
     }
     return(occurrences)
+    
 }
 
 function drawNames()
 {
-    fill(255)
-    textAlign(CENTER)
+    fill(0);
     for (let i = 0; i < names.length; i++)
     {
-        
-        textSize(countOccurrences(getWords(textH),names[i])*5);
-        text(names[i],width/2,height/(i*2))
+        let nameC = 
+        {
+            name:names[i],
+            count:countOccurrences(getWords(textH),names[i])
+        } 
+        textSize(nameC.count)
+        text(nameC.name,0,height/2 + (i*50));
     }
 }
