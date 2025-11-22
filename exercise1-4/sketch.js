@@ -58,11 +58,23 @@ function mouseClicked()
 function saveLevel() 
 {
     let toSave = [];
-    // placed sprites name: x: y: 
-    for(let i = 0; i < placedSprites.length; i++)
+    function getImageName(img) 
     {
-        toSave.push(placedSprites[i].getX+ "," + placedSprites[i].getY + "," + placedSprites[i].getImage + "\n")
+        if (img === grass) return "grass";
+        if (img === rock) return "rock";
+        if (img === sand) return "sand";
+        if (img === water) return "water";
+        if (img === foxcat) return "foxcat";
+        return "unknown";
     }
+    for (let sprite of placedSprites) 
+    {
+        let name = getImageName(sprite.getImage());
+        let x = sprite.getX();
+        let y = sprite.getY();
+        toSave.push(name + "," + x + "," + y);
+    }
+
     saveStrings(toSave, "sprite_map.txt");
 }
 
