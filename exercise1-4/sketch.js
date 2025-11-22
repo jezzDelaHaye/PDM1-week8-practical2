@@ -36,13 +36,16 @@ function draw() {
     drawObjectCollection(placedSprites)
 }
 
-function mouseClicked() {
+function mouseClicked() 
+{
     if (isMouseOverArea(0, 0, 300, 300) && selectedButton > -1) {
         const sprite = panelButtons[selectedButton].makeTile(getGridCoord(mouseX), getGridCoord(mouseY));
         placedSprites.push(sprite)
     } else if (isMouseOverArea(300, 0, 50, 300)) {
         updatePanel();
     }
+
+
 }
 
 /**
@@ -54,7 +57,13 @@ function mouseClicked() {
  */
 function saveLevel() 
 {
-    
+    let toSave = [];
+    // placed sprites name: x: y: 
+    for(let i = 0; i < placedSprites.length; i++)
+    {
+        toSave.push(placedSprites[i].getX+ "," + placedSprites[i].getY + "," + placedSprites[i].getImage + "\n")
+    }
+    saveStrings(toSave, "sprite_map.txt");
 }
 
 /**
@@ -62,7 +71,8 @@ function saveLevel()
  * @param {number} value A pixel value e.g. an x coordinate
  * @returns {number} The coordinate of the grid cell containing the pixel
  */
-function getGridCoord(value) {
+function getGridCoord(value) 
+{
     return floor(value / GRID_SIZE) * GRID_SIZE;
 }
 
@@ -271,3 +281,5 @@ class Sprite {
         return this.#img;
     }
 }
+
+
